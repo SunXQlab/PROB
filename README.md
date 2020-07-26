@@ -3,9 +3,11 @@ pseudotemporal progression-based Bayesian method for inferring GRNs from cross-s
 
 PROB contains two main functions, ‘Progression_Inferrence’ (for inferring pseudotemporal progression) and ‘ODE_BayesianLasso’ (for inferring ODE network using Bayessian Lasso). The visualization module of PROB enables the users to plot pseudotemporal progression trajectory and to plot pseudotemporal expression of the selected genes. In addition, the prior network information can be incorporated into function ‘ODE_BayesianLasso’ when PROB is applied to large scale network reconstruction. 
 
+## Functions
+
 The input and output of each function are described below. 
 
-## 1. Pseudotemporal progression inference
+### 1. Pseudotemporal progression inference
 
 **[Data_ordered,PPD, TimeSampled]=Progression_Inferrence(Data)**
 
@@ -23,7 +25,7 @@ PPD: a vector containing pseudotemporal progression distance for each patient.
 
 TimeSampled: a vector containing standardized time-points sampled for Data_ordered. 
 
-## 2. GRN inference
+### 2. GRN inference
 
 **[Para_Post_pdf,S,AM]=ODE_BayesianLasso(Data_ordered, TimeSampled)**
 
@@ -43,7 +45,7 @@ S: a matrix saving the presence probability.
 
 AM: Adjacent matrix of the inferred GRN. (aij) for the regulatory strength from gene j to gene i. 
 
-## 3. Visualization
+### 3. Visualization
 
 **Progression_Plot(Data)**
 
@@ -87,7 +89,7 @@ NodeID: The ID or the symbol of the genes in the AM.
 
 A matrix containing 3 columns: source nodes, interaction coefficients and target nodes. 
 
-## 4. Incorporating prior network information
+### 4. Incorporating prior network information
 
 **[Para_Post_pdf,S,AM]=ODE_BayesianLasso_PriorNet(Data_ordered,TimeSampled,PriorNet)**
 
@@ -133,7 +135,7 @@ The users need to first download all the files in this repository and save them 
     geneID=[1:6]; % specify the ID of genes you want to plot
     TemporalGene_Plot(geneID,TimeSampled,Data_ordered); % plot pseudotemporal gene expression
 
-## 6. Other information
+## Other information
 
 Please cite oue paper if you used codes here. 
 
