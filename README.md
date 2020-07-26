@@ -1,7 +1,9 @@
 # PROB
 pseudotemporal progression-based Bayesian method for inferring GRNs from cross-sectional clinical transcriptomic data
 
-PROB contains two main functions, ‘Progression_Inferrence’ (for inferring pseudotemporal progression) and ‘ODE_BayesianLasso’ (for inferring ODE network using Bayessian Lasso). The visualization module of PROB enables the users to plot pseudotemporal progression trajectory and to plot pseudotemporal expression of the selected genes. In addition, the prior network information can be incorporated into function ‘ODE_BayesianLasso’ when PROB is applied to large scale network reconstruction. The input and output of each function are described below. 
+PROB contains two main functions, ‘Progression_Inferrence’ (for inferring pseudotemporal progression) and ‘ODE_BayesianLasso’ (for inferring ODE network using Bayessian Lasso). The visualization module of PROB enables the users to plot pseudotemporal progression trajectory and to plot pseudotemporal expression of the selected genes. In addition, the prior network information can be incorporated into function ‘ODE_BayesianLasso’ when PROB is applied to large scale network reconstruction. 
+
+The input and output of each function are described below. 
 
 ## 1. Pseudotemporal progression inference
 
@@ -108,6 +110,8 @@ S: a matrix saving the presence probability.
 AM: Adjacent matrix of the inferred GRN. (aij) for the regulatory strength from gene j to gene i. 
 
 ## Example demonstration
+
+The users need to first download all the files in this repository and save them into the working directory.
 
  *Load data*
     
