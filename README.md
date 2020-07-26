@@ -45,7 +45,7 @@ AM: Adjacent matrix of the inferred GRN. (aij) for the regulatory strength from 
 
 ## 3. Visualization
 
-* **Progression_Plot(Data)**
+**Progression_Plot(Data)**
 
 This function (.m) is designed to plot pseudotemporal progression trajectory. 
 
@@ -57,7 +57,7 @@ Data: a n×m matrix containing single cell gene expression profiles (the first n
 
 Two figures of pseudotemporal progression trajectory and pseudotemporal progression score along the ordering of patients. 
 
-* **TemporalGene_Plot(geneID,TimeSampled,Data_ordered)**
+**TemporalGene_Plot(geneID,TimeSampled,Data_ordered)**
 
 This function (.m) is designed to plot pseudotemporal expression of the selected genes.
 
@@ -73,7 +73,7 @@ TimeSampled: vector for the standardized time-points associated with Data_ordere
 
 A figure of the expression dynamics of the selected genes over the inferred pseudotemporal progression.
 
-* **Cytoscape_Reformat(AM,NodeID)**
+**Cytoscape_Reformat(AM,NodeID)**
 
 This function (.R) is designed to reformat the AM to a suitable format for input as cytoscape software. 
 
@@ -118,7 +118,7 @@ The users need to first download all the files in this repository and save them 
     load ExampleData.mat  % Firstly load example data;
     Data = ExampleData; % The ExampleData is a dataset containing expression levels of 6 genes (the first 6 rows) and  clinical information (the last row).
 
- *pseudotemporal progression inference*
+ *Pseudotemporal progression inference*
     
     [Data_ordered,PPD,TimeSampled]=Progression_Inference(Data);
 
