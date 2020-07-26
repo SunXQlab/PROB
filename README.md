@@ -7,7 +7,7 @@ PROB contains two main functions, ‘Progression_Inferrence’ (for inferring ps
 
 **[Data_ordered,PPD, TimeSampled]=Progression_Inferrence(Data)**
 
-This function (.m) was designed to infer pseudotemporal progression from the clinical cross-sectional gene expression data. 
+This function (.m) is designed to infer pseudotemporal progression from the clinical cross-sectional gene expression data. 
 
 ***Input***
 
@@ -25,7 +25,7 @@ TimeSampled: a vector containing standardized time-points sampled for Data_order
 
 **[Para_Post_pdf,S,AM]=ODE_BayesianLasso(Data_ordered, TimeSampled)**
 
-This function (.m) was designed to reconstruct causal GRN based on the results of the above pseudotemporal progression inference. 
+This function (.m) is designed to reconstruct causal GRN based on the results of the above pseudotemporal progression inference. 
 
 ***Input***
 
@@ -73,7 +73,7 @@ A figure of the expression dynamics of the selected genes over the inferred pseu
 
 * **Cytoscape_Reformat(AM,NodeID)**
 
-This function (.R) was designed to reformat the AM to a suitable format for input as cytoscape software. 
+This function (.R) is designed to reformat the AM to a suitable format for input as cytoscape software. 
 
 ***Input***
 
@@ -89,7 +89,7 @@ A matrix containing 3 columns: source nodes, interaction coefficients and target
 
 **[Para_Post_pdf,S,AM]=ODE_BayesianLasso_PriorNet(Data_ordered,TimeSampled,PriorNet)**
 
-This function (.m) was designed to incorporate prior network information into function ‘ODE_BayesianLasso’, when PROB is applied to large scale network reconstruction. 
+This function (.m) is designed to incorporate prior network information into function ‘ODE_BayesianLasso’, when PROB is applied to large scale network reconstruction. 
 
 ***Input***
 
@@ -107,7 +107,29 @@ S: a matrix saving the presence probability.
 
 AM: Adjacent matrix of the inferred GRN. (aij) for the regulatory strength from gene j to gene i. 
 
-## 5. Other information
+## Example demonstration
+
+ *Load data*
+    
+    load ExampleData.mat  % Firstly load example data;
+    Data = ExampleData; % The ExampleData is a dataset containing expression levels of 6 genes (the first 6 rows) and  clinical information (the last row).
+
+ *pseudotemporal progression inference*
+    
+    [Data_ordered,PPD,TimeSampled]=Progression_Inference(Data);
+
+ *Bayesian Lasso for GRN parameter estimation*
+    
+    [Para_Post_pdf,S,AM]=ODE_BayesianLasso(Data_ordered,TimeSampled);
+    csvwrite('AdjacentMatrix.csv', AM); % save Adjacent matrix for visualization (can be reformed for cytoscape visualization)
+
+ *Visualization*
+    
+    Progression_Plot(X_stage);  % plot pseudotemporal progression trajectory
+    geneID=[1:6]; % specify the ID of genes you want to plot
+    TemporalGene_Plot(geneID,TimeSampled,Data_ordered); % plot pseudotemporal gene expression
+
+## 6. Other information
 
 Please cite oue paper if you used codes here. 
 
