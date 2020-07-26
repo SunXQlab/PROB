@@ -139,6 +139,6 @@ The users need to first download all the files in this repository and save them 
 
 Please cite oue paper if you used codes here. 
 
-   *Xiaoqiang Sun, Qing Nie, Inferring causal gene regulatory networks from cross-sectional transcriptomic data during cancer progression. 2020. Submitted. (`link`)
+   *Xiaoqiang Sun, Qing Nie, Inferring causal gene regulatory networks from cross-sectional transcriptomic data during cancer progression. 2020. Submitted.* (`link`)
 
 Any questions please contact sunxq6@mail.sysu.edu.cn
