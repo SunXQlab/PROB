@@ -139,6 +139,7 @@ The users need to first download all the files in this repository and save them 
 
 Please cite oue paper if you used codes here. 
 
-   *Xiaoqiang Sun, Ji Zhang, Qing Nie. Inferring gene regulatory networks in cancer progression from large-scale cross-sectional transcriptomic data.* (`link`)
+   *Xiaoqiang Sun, Ji Zhang, Qing Nie. Inferring latent temporal progression and regulatory networks from cross-sectional transcriptomic data of cancer samples.* (`link`)
+   (preprint has posted on bioRxiv: https://biorxiv.org/cgi/content/short/2020.10.07.329417v1)
 
 Any questions please contact sunxq6@mail.sysu.edu.cn
