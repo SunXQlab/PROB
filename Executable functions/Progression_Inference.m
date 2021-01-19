@@ -40,17 +40,20 @@ M = dpt_input(T, phi0);
 %     break
 %     end
 % end
- %% another approach to select root  
+%% another approach to select root
     Ind_max=find(grade==max(grade));
     b=length(max(grade));
     rn=ceil(rand*b);
     x_ref=Ind_max(rn);
     drn=dpt_to_root(M,x_ref);
-    
     [~,AA_sort]=sort(drn,'descend');
-    AA=find(grade(AA_sort)==min(grade));   % limit the selection of root to Grade_min
-    root=AA(1);
- 
+    % limit the selection of root to the G_min subpopulation
+    for i=1:length(AA_sort)
+        if grade(AA_sort(i))==1
+            root=AA_sort(i);
+            break
+        end
+    end
   
 PPD=dpt_to_root(M,root)';
 
