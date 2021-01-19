@@ -27,18 +27,30 @@ nsig=10; [T,phi0] = T_loc(data,nsig,W);
 M = dpt_input(T, phi0);
 
 %% calculate root
-for rep_root=1:size(data,1)   %randperm(size(data,1))
-    a=sum(grade~=max(grade))+1;
-    b=length(grade);
-    rn=ceil(rand*(b-a)+a);
-    drn=dpt_to_root(M,rn);
-    [~,rr_123]=max(drn);  % select a node that has the maximal distance to a randomly selected node with maximal grade. 
-    % if grade(rr_123)~=max(grade)
-    if grade(rr_123)==min(grade)
-    root=rr_123;
-    break
-    end
-end
+% for rep_root=1:size(data,1)   %randperm(size(data,1))
+%     a=sum(grade~=max(grade))+1;
+%     b=length(grade);
+%     rn=ceil(rand*(b-a)+a);
+%     drn=dpt_to_root(M,rn);
+% 
+%     [~,rr_123]=max(drn);  % select a node that has the maximal distance to a random selected node in grade 4. 
+%     if grade(rr_123)==min(grade) %~=4
+%     root=rr_123;
+% %     rep_root
+%     break
+%     end
+% end
+ %% another approach to select root
+    Ind_max=find(grade==max(grade));
+    b=length(max(grade));
+    rn=ceil(rand*b);
+    x_ref=Ind_max(rn);
+    drn=dpt_to_root(M,x_ref);
+    
+    [~,AA_sort]=sort(drn,'descend');
+    AA=find(grade(AA_sort)==min(grade));   % limit the selection of root to Grade_min
+    root=AA(1);
+ 
   
 PPD=dpt_to_root(M,root)';
 
