@@ -1,8 +1,7 @@
 
 % %%% Simulated Coeficient Matrix
-% C=csvread('F:\Clinical Gene expression network Project\Code\Simulated ODE data - 6GeneNet\Coefficient Matrix_new.csv');
-% C=csvread('F:\Clinical Gene expression network Project\Code\Simulated ODE data - 6GeneNet\Coefficient Matrix_double3net.csv');
-C=csvread('F:\E Disk\Clinical Gene expression network Project\Code\Simulated ODE data - 6GeneNet\Coefficient Matrix_feedback.csv');
+
+C=csvread('Path\Coefficient Matrix_feedback.csv');
 
 D=diag(C)';
 C(logical(eye(size(C,1))))=0;
