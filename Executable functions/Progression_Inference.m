@@ -33,7 +33,8 @@ for rep_root=1:size(data,1)   %randperm(size(data,1))
     rn=ceil(rand*(b-a)+a);
     drn=dpt_to_root(M,rn);
     [~,rr_123]=max(drn);  % select a node that has the maximal distance to a randomly selected node with maximal grade. 
-    if grade(rr_123)~=max(grade)
+    % if grade(rr_123)~=max(grade)
+    if grade(rr_123)==min(grade)
     root=rr_123;
     break
     end
