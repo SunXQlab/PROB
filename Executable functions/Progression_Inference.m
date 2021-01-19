@@ -11,7 +11,7 @@ data=X_stage(1:R(1)-1,:)';
 % data=cosine_dist_normalisation(data);
 grade=X_stage(R(1),:);
 
-%%  clinical information-weighted locally-scaled kernel  
+%% % clinical information-weighted locally-scaled kernel  
 % weight coefficients
 W=zeros(length(grade),length(grade));
 for i=1:length(grade)
@@ -26,7 +26,7 @@ nsig=10; [T,phi0] = T_loc(data,nsig,W);
 %make the accumulated transition matrix and find tip cells
 M = dpt_input(T, phi0);
 
-%% calculate root  
+%% %calculate root  
 % for rep_root=1:size(data,1)   %randperm(size(data,1))
 %     a=sum(grade~=max(grade))+1;
 %     b=length(grade);
@@ -40,7 +40,7 @@ M = dpt_input(T, phi0);
 %     break
 %     end
 % end
- %% another approach to select root  
+ %% %another approach to select root  
     Ind_max=find(grade==max(grade));
     b=length(max(grade));
     rn=ceil(rand*b);
