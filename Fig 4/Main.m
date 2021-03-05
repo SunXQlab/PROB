@@ -1,13 +1,13 @@
 %% Data load 
 
-Expression=csvread('F:\Clinical Gene expression network Project\Reversion\Data\UC-SARC\GSE128192_Expression_processed.csv',1,1);
-Staging=csvread('F:\Clinical Gene expression network Project\Reversion\Data\UC-SARC\Staging.csv',1,1);
-EMT_reggene_ind=csvread('F:\Clinical Gene expression network Project\Reversion\Data\UC-SARC\EMT_reggene_ind.csv',1,1);
+Expression=csvread('Data\UC-SARC\GSE128192_Expression_processed.csv',1,1);
+Staging=csvread('Data\UC-SARC\Staging.csv',1,1);
+EMT_reggene_ind=csvread('Data\UC-SARC\EMT_reggene_ind.csv',1,1);
 EMT_reggene_ind=EMT_reggene_ind(EMT_reggene_ind~=0);
 EMT_reggene_ind=unique(EMT_reggene_ind,'stable');
 
 input_data=[Expression;Staging'];
-cd('F:\Clinical Gene expression network Project\Reversion\Codes\UC_SARC')
+cd('Codes\UC_SARC')
 % [val,ind]=sort(Capture_time);
 % input_data=input_data(:,ind);
 save input_data.mat input_data
